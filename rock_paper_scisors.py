@@ -1,6 +1,6 @@
 import random
 
-print("Welcome to the Rock, Paper, and Scissors game! 🎮")
+print("WELCOME TO THE ROCK, PAPER, AND SCISSORS GAME! 🎮")
 
 options = {1: "🪨  rock", 2: "📜 paper", 3: "✂ scissors"}
 
