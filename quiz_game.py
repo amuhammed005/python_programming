@@ -61,11 +61,24 @@ def quiz_game():
         else:
             print("INCORRECT!")
             print(f"The correct answer is: {answers[i - 1]}")
+
+    print("Answers: ", end=" ")
+    for answer in answers:
+        print(answer, end=" ")
+    print()
+
+    print("Guesses: ", end=" ")
+    for guess in guesses:
+        print(guess, end=" ")
+    print()
     
     score = calculate_score(guesses, answers)
-    print("\n-------------- Final Score -------------")
-    print(f"You answered {score}/{len(questions)} questions correctly!")
+    percentage_score = (score / len(questions)) * 100
     print("------------------------------------------")
+    print("RESULTS")
+    print("------------------------------------------")
+    print(f"You answered {score}/{len(questions)} questions correctly!")
+    print(f"You'ved scored: {percentage_score}%")
 
 # Run the quiz game
 quiz_game()

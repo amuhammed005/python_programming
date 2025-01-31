@@ -1,7 +1,8 @@
 print("Welcome to TechDam food restaurant!")
 
 foods = []
-prices = []
+
+prices = ()
 cart_total = 0
 while True:
     food = input("Enter a food to buy (q to quit): ").strip().lower()
