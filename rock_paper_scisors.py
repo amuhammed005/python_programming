@@ -10,27 +10,28 @@ for key, value in options.items():
     print(f"{key}: {value}")
 
 is_running = True
-while is_running:
 
+while is_running:
     user_guess = input(f"\nEnter your guess: ")
     if user_guess.isdigit():
         user_guess = int(user_guess)
-        
+
+        if user_guess not in options:
+            print("❌ Invalid choice. Please select 1 (Rock), 2 (Paper), or 3 (Scissors).")
+            continue
+
         computer_guess = random.randint(1, 3)
         # Show choices
         print(f"\n🧑 You chose: {options[user_guess]}")
         print(f"🤖 Computer chose: {options[computer_guess]}")
 
-        if user_guess not in options:
-            print("❌ Invalid choice. Please select 1 (Rock), 2 (Paper), or 3 (Scissors).")
-            continue
         
         if user_guess == computer_guess:
             print("🤝 It's a draw!")
         elif (user_guess == 1 and computer_guess == 3) or \
-             (user_guess == 2 and computer_guess == 1) or \
-             (user_guess == 3 and computer_guess == 2):
-             print("🎉 You won!")
+            (user_guess == 2 and computer_guess == 1) or \
+            (user_guess == 3 and computer_guess == 2):
+            print("🎉 You won!")
         else:
             print("😢 You lost!")
         
