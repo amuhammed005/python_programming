@@ -1,3 +1,5 @@
+import random
+
 # for x in range(3):
 #     for y in range(1, 10):
 #         print(y, end="")
@@ -61,11 +63,11 @@
 
 
 # PYTHON DICTIONARY
-capitals = {
-    "USA": "Washinton DC",
-    "China": "Berjing",
-    "Ghana": "Accra"
-}
+# capitals = {
+#     "USA": "Washinton DC",
+#     "China": "Berjing",
+#     "Ghana": "Accra"
+# }
 
 # print(capitals)
 # print(dir(capitals))
@@ -74,7 +76,7 @@ capitals = {
 # print(capitals.get("USA"))
 # capitals.update({"Burkina": "Tenkudogu"})
 # capitals.pop("Burkina")
-capitals.update({"Burkina": "Ougadugu"})
+# capitals.update({"Burkina": "Ougadugu"})
 # capitals.popitem()
 
 # keys = capitals.keys()
@@ -95,16 +97,11 @@ capitals.update({"Burkina": "Ougadugu"})
 # for key, value in capitals.items():
 #     print(f"{key}: {value}")
 
-import random
+# import random
 # print(help(random))
-number = random.randint(1, 100)
+# number = random.randint(1, 100)
 
-print(number)
-
-
-
-
-
+# print(number)
 
 
 
