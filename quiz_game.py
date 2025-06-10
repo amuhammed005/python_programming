@@ -21,6 +21,7 @@ def calculate_score(guesses, answers):
             score += 1
     return score
 
+
 def quiz_game():
     title = "WELCOME TO THE PYTHON QUIZ GAME!"
     print(title);
@@ -50,35 +51,42 @@ def quiz_game():
         ("A. Au", "B. Ag", "C. Fe", "D. Hg"),
     ]
     answers = ["C", "D", "A", "A", "B", "C", "B", "B", "A", "A"]
-
-    guesses = []
-    for i, question in enumerate(questions, start=1):
-        display_question(i, question, options[i - 1])
-        guess = get_user_guess()
-        guesses.append(guess)
-        if guess == answers[i - 1]:
-            print("CORRECT!")
-        else:
-            print("INCORRECT!")
-            print(f"The correct answer is: {answers[i - 1]}")
-
-    print("Answers: ", end=" ")
-    for answer in answers:
-        print(answer, end=" ")
-    print()
-
-    print("Guesses: ", end=" ")
-    for guess in guesses:
-        print(guess, end=" ")
-    print()
     
-    score = calculate_score(guesses, answers)
-    percentage_score = (score / len(questions)) * 100
-    print("------------------------------------------")
-    print("RESULTS")
-    print("------------------------------------------")
-    print(f"You answered {score}/{len(questions)} questions correctly!")
-    print(f"You'ved scored: {percentage_score}%")
+    is_running = True
+    while is_running:
+        guesses = []
+        for i, question in enumerate(questions, start=1):
+            display_question(i, question, options[i - 1])
+            guess = get_user_guess()
+            guesses.append(guess)
+            if guess == answers[i - 1]:
+                print("CORRECT!")
+            else:
+                print("INCORRECT!")
+                print(f"The correct answer is: {answers[i - 1]}")
+
+        print("Answers: ", end=" ")
+        for answer in answers:
+            print(answer, end=" ")
+        print()
+
+        print("Guesses: ", end=" ")
+        for guess in guesses:
+            print(guess, end=" ")
+        print()
+        
+        score = calculate_score(guesses, answers)
+        percentage_score = (score / len(questions)) * 100
+        print("------------------------------------------")
+        print("RESULTS")
+        print("------------------------------------------")
+        print(f"You answered {score}/{len(questions)} questions correctly!")
+        print(f"You'ved scored: {percentage_score}%")
+        
+        play_again = input("Do you want to play again? (y/n): ").strip().lower()
+        if play_again != "y":
+            is_running = False
+            print("👋 Thanks for playing! See you next time! 🎮")
 
 # Run the quiz game
 quiz_game()
