@@ -51,7 +51,7 @@ def quiz_game():
         ("A. Au", "B. Ag", "C. Fe", "D. Hg"),
     ]
     answers = ["C", "D", "A", "A", "B", "C", "B", "B", "A", "A"]
-    
+
     is_running = True
     while is_running:
         guesses = []
