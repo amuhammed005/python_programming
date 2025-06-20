@@ -218,12 +218,6 @@ def load_from_file():
             return json.load(f)
     except FileNotFoundError:
         return {}
-def load_from_file():
-    try:
-        with open("students.json", "r") as f:
-            return json.load(f)
-    except FileNotFoundError:
-        return {}
 
 
 def main():
