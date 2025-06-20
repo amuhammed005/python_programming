@@ -1,0 +1,21 @@
+{
+    "101": {
+        "id": 101,
+        "name": "Adam Turan",
+        "age": 25,
+        "registered_courses": {
+            "DCIT 216": "Computer Networks"
+        },
+        "scores": {}
+    },
+    "102": {
+        "id": 102,
+        "name": "Beast Master",
+        "age": 44,
+        "registered_courses": {
+            "DCIT 217": "Software Evolution",
+            "DCIT 207": "Data Structures"
+        },
+        "scores": {}
+    }
+}
