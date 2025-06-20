@@ -1,6 +1,6 @@
 import datetime
 import time
-
+import json
 
 courses = {
     "DCIT 200": "Internship",
@@ -187,7 +187,7 @@ def delete_student(id, students):
         print(f"🚮 Student {id} deleted successfully")
 
 
-def all_students(students):
+def all_students(id, students):
     print(f"*** All students ***")
 
     if not students:
@@ -207,11 +207,30 @@ def clear_students_data(students):
     print(f"🚮 Students data cleared successfully")    
     
 
+def save_to_file(students):
+    with open("students.json", "w") as f:
+        json.dump(students, f, indent=4)
+    print("💾 Data saved to students.json")
+
+def load_from_file():
+    try:
+        with open("students", "r") as f:
+            return json.load(f)
+    except FileNotFoundError:
+        return {}
+def load_from_file():
+    try:
+        with open("students.json", "r") as f:
+            return json.load(f)
+    except FileNotFoundError:
+        return {}
+
+
 def main():
     print("*** Welcome to the student management system ***")
 
-    students = {}
-    student_id = 101
+    students = load_from_file()
+    student_id = max(map(int, []), default=1000) + 1
         
     while True:
         print("***** MENU *****")
@@ -222,7 +241,7 @@ def main():
         print("5: List all students")
         print("6: Delete a student")
         print("7: Delete all students")
-        print("8: Quit")
+        print("8: Save to file and Quit")
 
         choice = input("Select an option: ").strip()
 
@@ -250,7 +269,7 @@ def main():
             except ValueError:
                 print("⚠️ Invalid input")
         elif choice == "5":
-            all_students(students)
+            all_students(student_id , students)
         elif choice == "6":
             try:
                 id = int(input("Enter student ID: ").strip())
@@ -260,6 +279,7 @@ def main():
         elif choice == "7":
             clear_students_data(students)
         elif choice == "8":
+            save_to_file(students)
             break
 
 
